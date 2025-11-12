@@ -20,7 +20,8 @@
     "slick-carousel": "^1.8.1",
     "tailwind-scrollbar": "^2.1.0",
     "web-vitals": "^2.1.4"
-  },
+  },"homepage": "https://kapilan2005.github.io/project-shop",
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
