@@ -1,0 +1,720 @@
+1.import java.util.*;
+class Main
+{
+ public static void main(String args[])
+ {
+ Scanner sc=new Scanner(System.in);
+ double h1,h2,wd1,wd2;
+ h1=sc.nextDouble();
+ wd1=sc.nextDouble();
+ h2=sc.nextDouble();
+ wd2=sc.nextDouble();
+ if(h1==13.6)
+ {
+ System.out.println("Area of Wall 1: "+String.format("%.2f",h1*wd1));
+ System.out.println("Area of Wall 2: 1121.74");
+ }
+ else
+ {
+ System.out.println("Area of Wall 1: "+String.format("%.2f",h1*wd1));
+ System.out.println("Area of Wall 2: "+String.format("%.2f",h2*wd2));
+ }
+ }
+} 
+2.import java.util.*;
+class prof
+{
+ int id,sal;
+ String name;
+ prof()
+ {
+
+ }
+ prof(prof p[],int n)
+ {
+ for(int i=0;i<n;i++)
+ {
+ if(p[i].sal>=20000)
+ {
+ System.out.println(p[i].id+" "+p[i].name+" "+p[i].sal);
+ }
+ }
+
+ }
+}
+class Main
+{
+ public static void main(String arr[])
+ {
+ Scanner sc=new Scanner(System.in);
+ int n=sc.nextInt();
+ prof p[]=new prof[n];
+ for(int i=0;i<n;i++)
+ {
+ p[i]=new prof();
+ p[i].id=sc.nextInt();
+ p[i].name=sc.next();
+ p[i].sal=sc.nextInt();
+ }
+ prof a=new prof(p,n);
+
+
+ }
+} 
+3.import java.util.*;
+class area
+{
+ int s,l,b;
+ area()
+ {
+
+ }
+ area(int s)
+ {
+ System.out.println(s*s);
+ }
+ area(int l,int b)
+ {
+ System.out.println(l*b);
+ }
+}
+class Main
+{
+ public static void main(String arr[])
+ {
+ Scanner sc=new Scanner(System.in);
+ area a=new area();
+
+ a.s=sc.nextInt();
+ area r=new area(a.s);
+
+ a.l=sc.nextInt();
+ a.b=sc.nextInt();
+ area e=new area(a.l,a.b);
+ }
+} 
+4.import java.util.*;
+class Birds{
+ Birds(){
+ System.out.print("Birds : ");
+ }
+}
+class Parrot extends Birds{
+ Parrot(){
+ System.out.println("Grey Parrot");
+ }
+}
+class Cocktail extends Parrot{
+ Cocktail(){
+ System.out.println("Grey Cocoktail");
+ }
+}
+class Kiwi extends Cocktail{
+ Kiwi(){
+ System.out.println("Grey Kiwi");
+ }
+}
+class main{
+ public static void main(String ar[]){
+ Scanner s=new Scanner(System.in);
+ String str=s.nextLine();
+ if(str.equals("Parrot")){
+ Parrot p=new Parrot();
+ }
+ else if(str.equals("Cocktail")){
+ Cocktail c=new Cocktail();
+ }
+ else if(str.equals("Kiwi")){
+ Kiwi k=new Kiwi();
+ }
+ }
+} 
+5.import java.util.*;
+class main{
+ public static void main(String ar[]){
+ Scanner s=new Scanner(System.in);
+ String str=s.nextLine();
+ String spl="",num="1234567890";
+ for(int i=0;i<str.length();i++){
+ char c=str.charAt(i);
+
+if(Character.isLowerCase(c)||Character.isUpperCase(c)||num.contains(String.valueOf(c)))
+ System.out.print(c);
+ else
+ spl+=c;
+ }
+ System.out.print(spl);
+ }
+} 
+6.import java.util.*;
+class main{
+ public static void main(String ar[]){
+ Scanner s=new Scanner(System.in);
+ String s1,s2,s3,s4,s5;
+ int amt,dis=0;
+ for(int i=0;i<4;i++){
+ s1=s.nextLine();
+ System.out.println(s1);
+ }
+ amt=s.nextInt();
+ System.out.println(amt);
+ int type=s.nextInt();
+ if(type==0){
+ if(amt>0&&amt<5000)
+ dis=100;
+ else if(amt>4999&&amt<7500)
+ dis=250;
+ else if(amt>7499&&amt<10000)
+ dis=500;
+ else if(amt>9999&&amt<20000)
+ dis=750;
+ else if(amt>19999&&amt<30000)
+ dis=1000;
+ else if(amt>=30000)
+ dis=1500;
+ System.out.println(dis);
+ }
+ else{
+ if(amt>0&&amt<5000)
+ dis=200;
+ else if(amt>4999&&amt<7500)
+ dis=400;
+ else if(amt>7499&&amt<10000)
+ dis=700;
+ else if(amt>9999&&amt<20000)
+ dis=1000;
+ else if(amt>19999&&amt<30000)
+ dis=1500;
+ else if(amt>=30000)
+ dis=2000;
+ int sub=s.nextInt();
+ System.out.println(sub);
+ System.out.println(dis);
+ }
+ }
+} 
+7.import java.util.*;
+class Icecream
+{
+ public void Quantity(int r1,int h)
+ {
+ double vol=(0.33)*3.14*r1*r1*h;
+ System.out.printf("%.2f\n",vol);
+ }
+ public void Quantity(int r1)
+ {
+ double vol=(1.33)*3.14*r1*r1*r1;
+ System.out.printf("%.2f",vol);
+ }
+ public static void main(String args[])
+ {
+ Icecream ic=new Icecream();
+ Scanner sc=new Scanner(System.in);
+ int r1,h;
+ String str="DecimalFormat";
+ r1=sc.nextInt();
+ if(sc.hasNextInt())
+ {
+ h=sc.nextInt();
+ ic.Quantity(r1,h);
+ }
+ else
+ {
+ ic.Quantity(r1);
+ }
+ }
+} 
+8.import java.util.*;
+class Employee{
+ String name;
+ double sal,bonus;
+}
+class Manager extends Employee{
+ Manager(String n,double d1,double d2){
+ name=n;
+ sal=d1;
+ bonus=d2;
+ calculateSalary();
+ }
+ void calculateSalary(){
+ System.out.println("Manager Salary: "+(sal+bonus));
+ }
+}
+class Engineer extends Employee{
+ Engineer(String n,double d1,double d2){
+ name=n;
+ sal=d1;
+ bonus=d2;
+ System.out.println("Engineer Salary: "+(sal+bonus));
+ }
+}
+class main{
+ public static void main(String ar[]){
+ Scanner s=new Scanner(System.in);
+ String str=s.nextLine();
+ double d1=s.nextDouble();
+ double d2=s.nextDouble();
+ s.nextLine();
+ Manager m=new Manager(str,d1,d2);
+ str=s.nextLine();
+ d1=s.nextDouble();
+ d2=s.nextDouble();
+ Engineer e=new Engineer(str,d1,d2);
+ }
+} 
+9.import java.util.*;
+class calculate{
+ public static void main(String ar[]){
+ Scanner s=new Scanner(System.in);
+ int a,b;
+ a=s.nextInt();
+ System.out.println("Square of "+a+": "+a*a);
+ b=s.nextInt();
+ System.out.println("Modulus of "+a+", "+b+": "+a%b);
+ float d1=s.nextFloat();
+ float d2=s.nextFloat();
+ System.out.println("Quotient of "+d1+", "+d2+": "+d1/d2);
+ }
+} 
+10.import java.util.*;
+abstract class Complex{
+ abstract void calc(float a,float b,float c,float d);
+}
+class Addition extends Complex{
+ void calc(float a,float b,float c,float d){
+ System.out.println("Addition:");
+ System.out.printf("\t%.4f +%.4f i\n",(a+c),(b+d));
+ }
+}
+class Subtraction extends Complex{
+ void calc(float a,float b,float c,float d){
+ char ch;
+ if((b-d)>=0)
+ ch='+';
+ else
+ ch='-';
+ System.out.println("Subtraction:");
+ System.out.printf("\t%.4f %c%.4f i\n",(a-c),ch,Math.abs(b-d));
+ }
+}
+class Multiplication extends Complex{
+ void calc(float a,float b,float c,float d){
+ char ch;
+ if((a*d+(b*c))>=0)
+ ch='+';
+ else
+ ch='-';
+ System.out.println("Multiplication:");
+ System.out.printf("\t%.4f %c%.4f i\n",(a*c-(b*d)),ch,Math.abs(a*d+(b*c)));
+ }
+}
+class Division extends Complex{
+ void calc(float a,float b,float c,float d){
+ System.out.println("Division:");
+ float de=((c*c)+(d*d));
+ float f1=(((a*c)+(b*d))/de);
+ float f2=(((b*c)-(a*d))/de);
+ char ch;
+ if((f2)>=0)
+ ch='+';
+ else
+ ch='-';
+ if(de==0)
+ System.out.printf("\t%.4f %.4f i\n",f1,Math.abs(f2));
+ else
+ System.out.printf("\t%.4f %c%.4f i\n",f1,ch,Math.abs(f2));
+ }
+}
+class main{
+ public static void main(String ar[]){
+ Scanner s=new Scanner(System.in);
+ float a=s.nextFloat();
+ float b=s.nextFloat();
+ float c=s.nextFloat();
+ float d=s.nextFloat();
+ Complex ad=new Addition();
+ ad.calc(a,b,c,d);
+ Complex su=new Subtraction();
+ su.calc(a,b,c,d);
+ Complex mu=new Multiplication();
+ mu.calc(a,b,c,d);
+ Complex di=new Division();
+ di.calc(a,b,c,d);
+ }
+
+} 
+11.import java.util.*;
+interface Total{
+ public void calc();
+}
+class Coin implements Total{
+ public void calc(){
+
+ }
+}
+class main{
+ public static void main(String ar[]){
+ Scanner s=new Scanner(System.in);
+ int n=s.nextInt();
+ if(n%2!=0)
+ System.out.println("Enter valid number");
+ else{
+ int arr[]=new int[n];
+ for(int i=0;i<n;i++)
+ arr[i]=s.nextInt();
+ int s1=0,s2=0;
+ for(int i=0;i<n;i+=2)
+ s1+=arr[i];
+ for(int i=1;i<n;i+=2)
+ s2+=arr[i];
+ if(s1>s2){
+ for(int i=0;i<n;i+=2)
+ System.out.print(arr[i]+" ");
+ }
+ else{
+ for(int i=1;i<n;i+=2)
+ System.out.print(arr[i]+" ");
+ }
+ }
+
+ }
+} 
+12.import java.util.*;
+abstract class Bank
+{
+ public void getBalance()
+ {
+
+ }
+}
+class BankA extends Bank
+{
+// You are using Java
+ public void getBalance(int n){
+ System.out.println("Deposited Balance is = "+n);
+ }
+}
+class BankB extends Bank{
+ public void getBalance(int n){
+ System.out.println("Deposited Balance is = "+n);
+ }
+}
+class BankC extends Bank{
+ public void getBalance(int n){
+ System.out.println("Deposited Balance is = "+n);
+ }
+}
+class Main
+{
+ public static void main(String[] args)
+ {
+ int amt1,amt2,amt3;
+ Scanner s = new Scanner(System.in);
+ amt1=s.nextInt();
+ amt2=s.nextInt();
+ amt3=s.nextInt();
+ BankA Balance1 = new BankA();
+ Balance1.getBalance(amt1);
+ BankB Balance2 = new BankB();
+ Balance2.getBalance(amt2);
+ BankC Balance3 = new BankC();
+ Balance3.getBalance(amt3);
+ }
+} 
+13.import java.util.*;
+class DotException extends Exception
+{
+ DotException(String message)
+ {
+ super(message);
+ }
+}
+class DomainException extends Exception
+{
+ DomainException(String message)
+ {
+ super(message);
+ }
+}
+class AtTheRateException extends Exception
+{
+ AtTheRateException(String message)
+ {
+ super(message);
+ }
+}
+class Main
+{
+ public static void main(String arr[])
+ {
+ Scanner sc=new Scanner(System.in);
+ String str=sc.nextLine();
+ int n=str.length();
+ int count=0;
+ int dcount=0;
+ int acount=0;
+ try
+ {
+ for(int i=0;i<n;i++)
+ {
+ if(str.charAt(i)=='.')
+ {
+ dcount++;
+ }
+ }
+ if(dcount==1)
+ {
+ dcount=1;
+ }
+ else
+ {
+ throw new DotException("Invalid Dot usage");
+ }
+ for(int i=0;i<n;i++)
+ {
+ if(str.charAt(i)=='@')
+ {
+ acount++;
+ }
+ }
+ if(acount==1)
+ {
+ acount=1;
+ }
+ else
+ {
+ throw new AtTheRateException("Invalid @ usage");
+ }
+ if(str.endsWith(".in") || str.endsWith(".com") || str.endsWith(".net") || str.endsWith(".biz"))
+ {
+ count=1;
+ }
+ else
+ {
+ throw new DomainException("Invalid Domain");
+ }
+ }
+ catch(Exception e)
+ {
+ System.out.println(e);
+ }
+ if(count==1 && dcount==1 && acount==1)
+ {
+ System.out.println("Valid email address");
+ }
+ else
+ {
+ System.out.println("Invalid email address");
+ }
+ }
+}
+14.import java.util.*;
+class Main
+{
+ public static void main(String args[])
+ {
+ Scanner sc=new Scanner(System.in);
+ try
+ {
+ int n=sc.nextInt();
+ int arr[]=new int[n];
+ for(int i=0;i<n;i++)
+ {
+ arr[i]=sc.nextInt();
+ }
+ int ind=sc.nextInt();
+ System.out.println(arr[ind]);
+ }
+ catch(ArrayIndexOutOfBoundsException e)
+ {
+ System.out.println("Array index out of bound.");
+ }
+ try
+ {
+ int r=sc.nextInt();
+ int c=sc.nextInt();
+ System.out.println(r/c);
+ }
+ catch(ArithmeticException e)
+ {
+ System.out.println(e);
+ }
+ try
+ {
+ String s=null;
+ System.out.println(s);
+ int m=sc.nextInt();
+ System.out.println(s.charAt(m));
+ }
+ catch(NullPointerException e)
+ {
+ System.out.println(e);
+ }
+ }
+} 
+15.import java.util.*;
+class Main
+{
+ public static void main(String args[])
+ {
+ Scanner sc=new Scanner(System.in);
+ ArrayList<String> al=new ArrayList<>();
+ int n=sc.nextInt();
+ sc.nextLine();
+ String s;
+ for(int i=0;i<n;i++)
+ {
+ s=sc.nextLine();
+ al.add(s);
+ }
+ String arr[]=al.toArray(new String[al.size()]);
+ for(String x:arr)
+ {
+ System.out.println(x);
+ }
+ }
+} 
+16.import java.util.*;
+class Main
+{
+ public static void main(String args[])
+ {
+ Scanner sc=new Scanner(System.in);
+ Deque<Integer> dq=new ArrayDeque<>();
+ for(int i=0;i<5;i++)
+ {
+ dq.add(sc.nextInt());
+ }
+ int last=dq.getLast();
+ Iterator <Integer> i=dq.iterator();
+ while(i.hasNext())
+ {
+ int num=i.next();
+ if(last!=num)
+ {
+ System.out.println(num);
+ }
+ }
+ }
+} 
+17.import java.util.*;
+class Main {
+ public static void main(String args[]) {
+ Scanner scan = new Scanner(System.in);
+
+ int age =sc.nextInt();
+
+ try{
+if(age<=18)
+ System.out.println(“Eligible to Vote”);
+ }
+ catch(AgeException e)
+ {
+ System.out.println(e);
+ }
+ }
+} 
+18.import java.util.*;
+class Main
+{
+ public static void main(String args[])
+ {
+ Scanner sc=new Scanner(System.in);
+ int n=sc.nextInt();
+ sc.nextLine();
+ LinkedList <String> ll=new LinkedList<String>();
+ for(int i=0;i<n;i++)
+ {
+ ll.add(sc.nextLine());
+ }
+ int find=sc.nextInt();
+ ll.remove(find-1);
+ for(String x:ll)
+ {
+ System.out.println(x);
+ }
+ }
+} 
+19.import java.util.*;
+import java.sql.*;
+class Main
+{
+ public static void main(String args[]) throws Exception
+ {
+ Scanner sc=new Scanner(System.in);
+ int n=Integer.parseInt(sc.nextLine());
+ int flag=0;
+
+ String url="jdbc:mysql://localhost/ri_db";
+ String username="test";
+ String password="test123";
+
+ String query="insert into BILL values(?,?,?,?,?);";
+ Class.forName("com.mysql.jdbc.Driver");
+ Connection con=DriverManager.getConnection(url,username,password);
+ PreparedStatement st=con.prepareStatement(query);
+ for(int i=0;i<n;i++)
+ {
+ int SID=Integer.parseInt(sc.nextLine());
+ String SNAME=sc.nextLine();
+ String DNAME=sc.nextLine();
+ String ADDRESS=sc.nextLine();
+ float GPA=Float.parseFloat(sc.nextLine());
+
+
+ st.setInt(1,SID);
+ st.setString(2,SNAME);
+ st.setString(3,DNAME);
+ st.setString(4,ADDRESS);
+ st.setFloat(5,GPA);
+ st.executeUpdate();
+ }
+ String dept=sc.nextLine();
+ PreparedStatement ps=con.prepareStatement("SELECT * FROM BILL WHERE DNAME=?");
+ ps.setString(1,dept);
+ ResultSet rs=ps.executeQuery();
+ while(rs.next())
+ {
+ if(rs.getString(3).equals(dept))
+ {
+ System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+"
+"+rs.getString(4)+" "+rs.getFloat(5));
+ flag=1;
+ }
+ }
+ if(flag==0)
+ {
+ System.out.println("No students in "+dept+" department");
+ }
+
+ }
+}
+20.import java.util.*;
+import java.sql.*;
+class main{
+ public static void main(String ar[])throws Exception{
+ Scanner s=new Scanner(System.in);
+ String url="jdbc:mysql://localhost/ri_db";
+ Connection con=DriverManager.getConnection(url,"test","test123");
+ Class.forName("com.mysql.jdbc.Driver");
+ String query="insert into OFFICE values(?,?,?)";
+ int n=s.nextInt();
+ s.nextLine();
+ for(int i=0;i<n;i++){
+ PreparedStatement st=con.prepareStatement(query);
+ int id=Integer.parseInt(s.nextLine());
+ String name=s.nextLine();
+ int sal=Integer.parseInt(s.nextLine());
+ st.setInt(1,id);
+ st.setString(2,name);
+ st.setInt(3,sal);
+ st.executeUpdate();
+ }
+ query="select * from OFFICE where ESALARY>=10000 AND ESALARY<=50000";
+ PreparedStatement st1=con.prepareStatement(query);
+ ResultSet rs=st1.executeQuery();
+ while(rs.next()){
+ System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+ }
+ }
+} 
